@@ -1,0 +1,21 @@
+# Godot-specific temporary files
+# Ignore Godot cache
+godot/.godot/
+
+
+# Godot 4 editor settings
+.godot/imported/
+.godot/shader_cache/
+.godot/mono/
+
+# Godot 4 build outputs
+export_*/*
+*.pck
+*.apk
+*.aab
+*.exe
+*.zip
+
+# Misc
+*.import
+*.cache

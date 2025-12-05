@@ -10,6 +10,6 @@ config_version=5
 
 [application]
 
-config/name="Test_project"
+config/name="3D_FPS_project"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"

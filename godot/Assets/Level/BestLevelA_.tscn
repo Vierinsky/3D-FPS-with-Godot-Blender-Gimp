@@ -946,3 +946,8 @@ environment = SubResource("Environment_66521")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.344774, 0, 0.938686, 0, 1, 0, -0.938686, 0, 0.344774, 0, 14.6829, -10.027)
 light_color = Color(0.966766, 0.833173, 1, 1)
+light_energy = 1.457
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11.7378, -38.9549)
+omni_range = 20.1126

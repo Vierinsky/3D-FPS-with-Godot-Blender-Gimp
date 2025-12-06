@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=3 uid="uid://cg5tgfo51dox0"]
+[gd_scene load_steps=70 format=3 uid="uid://cg5tgfo51dox0"]
 
 [ext_resource type="Texture2D" uid="uid://31xl8uc8oc42" path="res://Assets/Level/level_A_Steps.png" id="1_gbqdt"]
 [ext_resource type="Texture2D" uid="uid://1jb7jxm3bkxx" path="res://Assets/Level/level_A_Steps_normal.png" id="2_j22sm"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://dh1but7pkhuyi" path="res://Assets/Level/level_A_Pastel_texture.png" id="11_hatt8"]
 [ext_resource type="Texture2D" uid="uid://d2nh3vmggqdgt" path="res://Assets/Level/level_A_Pastel_texture_normal.png" id="12_jne57"]
 [ext_resource type="PackedScene" uid="uid://5ch68tqs4ib" path="res://Player/player.tscn" id="13_raiot"]
+[ext_resource type="Texture2D" uid="uid://bgqawyr65rsvt" path="res://Assets/Level/Starfield.png" id="14_irhhm"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_svkc8"]
 resource_name = "Stone_Plancks"
@@ -823,6 +824,16 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_nrtai")
 
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_cg2jy"]
+panorama = ExtResource("14_irhhm")
+
+[sub_resource type="Sky" id="Sky_ucxe7"]
+sky_material = SubResource("PanoramaSkyMaterial_cg2jy")
+
+[sub_resource type="Environment" id="Environment_66521"]
+background_mode = 2
+sky = SubResource("Sky_ucxe7")
+
 [node name="Node3D" type="Node3D"]
 
 [node name="Player" parent="." instance=ExtResource("13_raiot")]
@@ -928,3 +939,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000140499, 0.96271, 0.00363
 visible = false
 mesh = SubResource("ArrayMesh_ilqa2")
 skeleton = NodePath("")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_66521")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.344774, 0, 0.938686, 0, 1, 0, -0.938686, 0, 0.344774, 0, 14.6829, -10.027)
+light_color = Color(0.966766, 0.833173, 1, 1)

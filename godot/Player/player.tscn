@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://5ch68tqs4ib"]
+[gd_scene load_steps=4 format=3 uid="uid://5ch68tqs4ib"]
 
 [ext_resource type="Script" path="res://Player/player.gd" id="1_lf2gh"]
+[ext_resource type="Script" path="res://Player/Camera_holder.gd" id="2_3t7bp"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_y0o2v"]
 
@@ -13,5 +14,6 @@ shape = SubResource("CapsuleShape3D_y0o2v")
 
 [node name="Camera_holder" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.71781, 0)
+script = ExtResource("2_3t7bp")
 
 [node name="Camera3D" type="Camera3D" parent="Camera_holder"]

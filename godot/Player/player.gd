@@ -13,6 +13,9 @@ func _ready():
 func _input(event):
 	if event is InputEventMouseMotion:
 		rotate_y(deg_to_rad(event.relative.x * -0.04))
+		
+	if event.is_action_pressed(("ui_cancel")):
+		get_tree().quit()
 
 func _physics_process(delta):
 	# Add the gravity.

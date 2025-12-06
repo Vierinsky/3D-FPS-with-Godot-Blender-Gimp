@@ -4,16 +4,17 @@
 [ext_resource type="Script" path="res://Player/Camera_holder.gd" id="2_3t7bp"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_y0o2v"]
+height = 3.111
 
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_lf2gh")
 
 [node name="Player_collision" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.59903, 0)
 shape = SubResource("CapsuleShape3D_y0o2v")
 
 [node name="Camera_holder" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.71781, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.92, 0)
 script = ExtResource("2_3t7bp")
 
 [node name="Camera3D" type="Camera3D" parent="Camera_holder"]

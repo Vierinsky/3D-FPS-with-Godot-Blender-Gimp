@@ -826,10 +826,10 @@ data = PackedVector3Array(0, -0.9564, -3.0096, 1.0961, -0.9564, -4.9936, 1.0961,
 [node name="Node3D" type="Node3D"]
 
 [node name="Player" parent="." instance=ExtResource("13_raiot")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.378049, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0774559, 0)
 
 [node name="level_A" type="Node3D" parent="."]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
+transform = Transform3D(7, 0, 0, 0, 7, 0, 0, 0, 7, 0, 0, 0)
 
 [node name="Plane" type="MeshInstance3D" parent="level_A"]
 mesh = SubResource("ArrayMesh_lxqc5")
@@ -918,7 +918,7 @@ mesh = SubResource("ArrayMesh_amq1l")
 skeleton = NodePath("")
 
 [node name="Plane_018" type="MeshInstance3D" parent="level_A"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000140499, 1.02746, 0.00363123)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000140499, 0.96271, 0.00363124)
 mesh = SubResource("ArrayMesh_ilqa2")
 skeleton = NodePath("")
 

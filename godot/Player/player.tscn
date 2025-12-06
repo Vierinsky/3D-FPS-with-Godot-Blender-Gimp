@@ -1,8 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://5ch68tqs4ib"]
+[gd_scene load_steps=3 format=3 uid="uid://5ch68tqs4ib"]
+
+[ext_resource type="Script" path="res://Player/player.gd" id="1_lf2gh"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_y0o2v"]
 
 [node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_lf2gh")
 
 [node name="Player_collision" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)

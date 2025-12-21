@@ -1,6 +1,7 @@
-[gd_scene load_steps=36 format=3 uid="uid://dburstvxc66ed"]
+[gd_scene load_steps=37 format=3 uid="uid://dburstvxc66ed"]
 
 [ext_resource type="AudioStream" uid="uid://bqnbsi0o6dwp3" path="res://Assets/Weapon/Shotgun/ShotgunShot.wav" id="1_4dxft"]
+[ext_resource type="Script" path="res://Assets/Weapon/Shotgun/gun.gd" id="1_ee7q2"]
 [ext_resource type="AudioStream" uid="uid://7376vijbheaw" path="res://Assets/Weapon/Shotgun/PumpShotgun.wav" id="2_5nqdp"]
 [ext_resource type="AudioStream" uid="uid://bp33lnklvulh3" path="res://Assets/Weapon/Shotgun/ShellPopIn.wav" id="3_afcb2"]
 [ext_resource type="AudioStream" uid="uid://dwjwu3lj3eghh" path="res://Assets/Weapon/Shotgun/DryFireShotgun.wav" id="4_62oaq"]
@@ -419,7 +420,7 @@ tracks/0/path = NodePath("Pump:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.5, 0.6),
+"times": PackedFloat32Array(0, 0.1, 0.5, 0.6),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Vector3(0.982994, 1.57605, 0), Vector3(0.476445, 1.57605, 0), Vector3(0.476445, 1.57605, 0), Vector3(0.982994, 1.57605, 0)]
@@ -438,7 +439,7 @@ tracks/1/keys = {
 }
 tracks/2/type = "value"
 tracks/2/imported = false
-tracks/2/enabled = true
+tracks/2/enabled = false
 tracks/2/path = NodePath(".:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
@@ -559,7 +560,8 @@ radial_segments = 4
 rings = 1
 
 [node name="Shotgun" type="Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0696351, -0.0547248, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.246516, 0, 0)
+script = ExtResource("1_ee7q2")
 
 [node name="photo_ref" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 1.66962, -2.02245)
@@ -617,6 +619,7 @@ libraries = {
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.27931, 1.74225, 0)
+visible = false
 explosiveness = 1.0
 local_coords = true
 process_material = SubResource("ParticleProcessMaterial_ul1jl")

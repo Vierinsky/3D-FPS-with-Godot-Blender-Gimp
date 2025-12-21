@@ -16,7 +16,7 @@ func _process(delta):
 			if can_fire:
 				reload()
 		if Input.is_action_just_pressed("fire"):
-			if can_fire():
+			if can_fire:
 				if ammo_in_gun>0:
 					fire()
 				else:
@@ -28,7 +28,7 @@ func reload():
 	var rounds_needed = max_rounds_in_gun - ammo_in_gun
 	
 	if ammo_in_inventory > rounds_needed:
-		ammo_in_invenory -= rounds_needed
+		ammo_in_inventory -= rounds_needed
 		ammo_in_gun = max_rounds_in_gun
 	else:
 		if ammo_in_inventory == 0:
@@ -52,11 +52,16 @@ func fire():
 	$FireSound.play()
 	$AnimationPlayer.play("Fire")
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
+func _on_animation_player_animation_finished(anim_name):
+	print("anim_name = ", anim_name)
+	if anim_name == "Fire":
+		$AnimationPlayer.play("Pump")
+		$PumpSound.play()
+		
+	if anim_name == "Pump":
+		can_fire = true
+		
+	if anim_name == "Reload":
+		can_fire = true
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass

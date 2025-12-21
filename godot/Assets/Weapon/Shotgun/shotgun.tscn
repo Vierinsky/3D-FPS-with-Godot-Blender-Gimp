@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://dburstvxc66ed"]
+[gd_scene load_steps=32 format=3 uid="uid://dburstvxc66ed"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k5smg"]
 resource_name = "Metal"
@@ -527,6 +527,13 @@ _data = {
 "Reload": SubResource("Animation_qjxdu")
 }
 
+[sub_resource type="Gradient" id="Gradient_gk6ca"]
+offsets = PackedFloat32Array(0, 0.220408, 1)
+colors = PackedColorArray(1, 1, 0, 1, 0.869783, 0.00540662, 2.88785e-07, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_dtqje"]
+gradient = SubResource("Gradient_gk6ca")
+
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ul1jl"]
 angle_min = -5.0
 angle_max = 5.0
@@ -534,6 +541,7 @@ spread = 5.0
 initial_velocity_min = 30.0
 initial_velocity_max = 30.0
 gravity = Vector3(0, 0, 0)
+color_ramp = SubResource("GradientTexture1D_dtqje")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i0mdx"]
 vertex_color_use_as_albedo = true
@@ -603,6 +611,8 @@ libraries = {
 }
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.27931, 1.74225, 0)
+explosiveness = 1.0
 local_coords = true
 process_material = SubResource("ParticleProcessMaterial_ul1jl")
 draw_pass_1 = SubResource("SphereMesh_5r5hn")

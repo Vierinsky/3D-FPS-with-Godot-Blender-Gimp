@@ -34,6 +34,11 @@ func _process(delta):
 					reload()
 
 func reload() -> void:
+	
+	# Magazine already full → do nothing
+	if ammo_in_gun >= max_rounds_in_gun:
+		return
+	
 	can_fire = false
 	# This part handles the ammo
 	var rounds_needed = max_rounds_in_gun - ammo_in_gun

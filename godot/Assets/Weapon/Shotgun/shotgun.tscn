@@ -1,8 +1,8 @@
 [gd_scene load_steps=37 format=3 uid="uid://dburstvxc66ed"]
 
 [ext_resource type="AudioStream" uid="uid://bqnbsi0o6dwp3" path="res://Assets/Weapon/Shotgun/ShotgunShot.wav" id="1_4dxft"]
-[ext_resource type="Script" path="res://Assets/Weapon/Shotgun/gun.gd" id="1_ee7q2"]
 [ext_resource type="AudioStream" uid="uid://7376vijbheaw" path="res://Assets/Weapon/Shotgun/PumpShotgun.wav" id="2_5nqdp"]
+[ext_resource type="Script" path="res://Assets/Weapon/Shotgun/WeaponPivot.gd" id="2_maq13"]
 [ext_resource type="AudioStream" uid="uid://bp33lnklvulh3" path="res://Assets/Weapon/Shotgun/ShellPopIn.wav" id="3_afcb2"]
 [ext_resource type="AudioStream" uid="uid://dwjwu3lj3eghh" path="res://Assets/Weapon/Shotgun/DryFireShotgun.wav" id="4_62oaq"]
 
@@ -383,59 +383,33 @@ shadow_mesh = SubResource("ArrayMesh_r6cp1")
 [sub_resource type="Animation" id="Animation_2otbe"]
 resource_name = "Fire"
 length = 0.7
-loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath(".:rotation")
+tracks/0/path = NodePath("WeaponPivot:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.6),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0, 0, 0.396574), Vector3(0, 0, 0)]
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0.117391), Vector3(0, 0, 0)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath(".:position")
+tracks/1/path = NodePath("WeaponPivot:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.3, 0.6),
+"times": PackedFloat32Array(0, 0.2, 0.6),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector3(0, 0, 0), Vector3(-0.244591, 0, 0), Vector3(0, 0, 0)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("WeaponPivot:rotation")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(),
-"transitions": PackedFloat32Array(),
-"update": 0,
-"values": []
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("WeaponPivot:position")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(),
-"transitions": PackedFloat32Array(),
-"update": 0,
-"values": []
+"values": [Vector3(0, 0, 0), Vector3(-0.443008, 0.0293236, 0), Vector3(0, 0, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_crsga"]
 resource_name = "Pump"
-loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -451,31 +425,18 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath(".:rotation")
+tracks/1/path = NodePath("WeaponPivot:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.2, 0.6, 0.8),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0, 0, 0.263388), Vector3(0, 0, 0.263388), Vector3(0, 0, 0)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = false
-tracks/2/path = NodePath(".:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.7, 0.9),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(-0.246516, 0, 0), Vector3(-0.246516, 0, 0), Vector3(0, 0, 0)]
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0.337634), Vector3(0, 0, 0.337634), Vector3(0, 0, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_qjxdu"]
 resource_name = "Reload"
-loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -491,62 +452,62 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath(".:rotation")
+tracks/1/path = NodePath("WeaponPivot/Shell:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.6, 0.8),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0, 0, 0.95925), Vector3(0, 0, 0.95925), Vector3(0, 0, 0)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath(".:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.6, 0.8),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(-0.0696351, -0.0547248, 0), Vector3(0.955666, 1.26381, 0), Vector3(0.955666, 1.26381, 0), Vector3(-0.0696351, -0.0547248, 0)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("WeaponPivot/Shell:position")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
 "times": PackedFloat32Array(0, 0.3, 0.4, 0.5, 1),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector3(-0.272, -1, -1), Vector3(-0.297582, 1.34465, -0.00370783), Vector3(-0.309644, 1.46175, 0.0486551), Vector3(-0.102363, 1.57894, 0.0097621), Vector3(-0.102363, 1.57894, 0.0097621)]
 }
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("WeaponPivot/Shell:rotation")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("WeaponPivot/Shell:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
 "times": PackedFloat32Array(0, 0.3),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector3(0, 0, -1.5708), Vector3(0, 0, -1.5708)]
 }
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("WeaponPivot/Shell:visible")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("WeaponPivot/Shell:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.5, 0.6, 1),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
 "values": [false, true, true, false, false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("WeaponPivot:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.6, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0.792379), Vector3(0, 0, 0.792379), Vector3(0, 0, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("WeaponPivot:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.6, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(1.35813, 1.03896, 0), Vector3(1.35813, 1.03896, 0), Vector3(0, 0, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vfen6"]
@@ -583,9 +544,10 @@ radial_segments = 4
 rings = 1
 
 [node name="Shotgun" type="Node3D"]
-script = ExtResource("1_ee7q2")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.242839, 0.347116, 0)
 
 [node name="WeaponPivot" type="Node3D" parent="."]
+script = ExtResource("2_maq13")
 
 [node name="photo_ref" type="Node3D" parent="WeaponPivot"]
 transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 1.66962, -2.02245)
@@ -636,12 +598,13 @@ visible = false
 mesh = SubResource("ArrayMesh_yjkgh")
 skeleton = NodePath("")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="WeaponPivot"]
+root_node = NodePath("../..")
 libraries = {
 "": SubResource("AnimationLibrary_vfen6")
 }
 
-[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+[node name="GPUParticles3D" type="GPUParticles3D" parent="WeaponPivot"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.27931, 1.74225, 0)
 lifetime = 0.9
 explosiveness = 1.0
@@ -649,51 +612,51 @@ local_coords = true
 process_material = SubResource("ParticleProcessMaterial_ul1jl")
 draw_pass_1 = SubResource("SphereMesh_5r5hn")
 
-[node name="RayHolder" type="Node3D" parent="."]
+[node name="RayHolder" type="Node3D" parent="WeaponPivot"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.38433, 1.72252, 0)
 
-[node name="RayCast3D" type="RayCast3D" parent="RayHolder"]
+[node name="RayCast3D" type="RayCast3D" parent="WeaponPivot/RayHolder"]
 transform = Transform3D(0.997346, -0.072803, 0, 0.072803, 0.997346, 0, 0, 0, 1, 0, 0, 0)
 target_position = Vector3(20, 0, 0)
 
-[node name="RayCast3D2" type="RayCast3D" parent="RayHolder"]
+[node name="RayCast3D2" type="RayCast3D" parent="WeaponPivot/RayHolder"]
 transform = Transform3D(0.998995, 0.0448225, 0, -0.0448225, 0.998995, 0, 0, 0, 1, 0, 0, 0)
 target_position = Vector3(20, 0, 0)
 
-[node name="RayCast3D3" type="RayCast3D" parent="RayHolder"]
+[node name="RayCast3D3" type="RayCast3D" parent="WeaponPivot/RayHolder"]
 transform = Transform3D(0.997563, 0.0447582, 0.0535211, -0.000873838, 0.775066, -0.631879, -0.0697642, 0.630293, 0.773217, 0, 0, 0)
 target_position = Vector3(20, 0, 0)
 
-[node name="RayCast3D4" type="RayCast3D" parent="RayHolder"]
+[node name="RayCast3D4" type="RayCast3D" parent="WeaponPivot/RayHolder"]
 transform = Transform3D(0.997563, 0.0447582, 0.0535211, 0.0487253, -0.995972, -0.0752711, 0.0499365, 0.0776955, -0.995726, 0, 0, 0)
 target_position = Vector3(20, 0, 0)
 
-[node name="RayCast3D5" type="RayCast3D" parent="RayHolder"]
+[node name="RayCast3D5" type="RayCast3D" parent="WeaponPivot/RayHolder"]
 transform = Transform3D(0.999558, 0.0177748, -0.0238108, -0.00606893, 0.906579, 0.421993, 0.0290872, -0.421662, 0.906286, 0, 0, 0)
 target_position = Vector3(20, 0, 0)
 
-[node name="RayCast3D6" type="RayCast3D" parent="RayHolder"]
+[node name="RayCast3D6" type="RayCast3D" parent="WeaponPivot/RayHolder"]
 transform = Transform3D(0.998981, -0.0449564, -0.00401379, 0.0449588, 0.998989, 0.00050799, 0.00398689, -0.000687927, 0.999992, 0, 0, 0)
 target_position = Vector3(20, 0, 0)
 
-[node name="RayCast3D7" type="RayCast3D" parent="RayHolder"]
+[node name="RayCast3D7" type="RayCast3D" parent="WeaponPivot/RayHolder"]
 transform = Transform3D(0.999844, 0.0118312, 0.0131295, -0.000873838, 0.775066, -0.631879, -0.0176521, 0.631769, 0.774955, 0, 0, 0)
 target_position = Vector3(20, 0, 0)
 
-[node name="RayCast3D8" type="RayCast3D" parent="RayHolder"]
+[node name="RayCast3D8" type="RayCast3D" parent="WeaponPivot/RayHolder"]
 transform = Transform3D(0.999109, 0.0158863, -0.0391108, 0.0372564, -0.767469, 0.640003, -0.0198491, -0.64089, -0.767376, 0, 0, 0)
 target_position = Vector3(20, 0, 0)
 
-[node name="FireSound" type="AudioStreamPlayer" parent="."]
+[node name="FireSound" type="AudioStreamPlayer" parent="WeaponPivot"]
 stream = ExtResource("1_4dxft")
 
-[node name="PumpSound" type="AudioStreamPlayer" parent="."]
+[node name="PumpSound" type="AudioStreamPlayer" parent="WeaponPivot"]
 stream = ExtResource("2_5nqdp")
 
-[node name="Reload" type="AudioStreamPlayer" parent="."]
+[node name="Reload" type="AudioStreamPlayer" parent="WeaponPivot"]
 stream = ExtResource("3_afcb2")
 
-[node name="DryFire" type="AudioStreamPlayer" parent="."]
+[node name="DryFire" type="AudioStreamPlayer" parent="WeaponPivot"]
 stream = ExtResource("4_62oaq")
 
-[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="animation_finished" from="WeaponPivot/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

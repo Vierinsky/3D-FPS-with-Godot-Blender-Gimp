@@ -1,4 +1,4 @@
-[gd_scene load_steps=70 format=3 uid="uid://cg5tgfo51dox0"]
+[gd_scene load_steps=71 format=3 uid="uid://cg5tgfo51dox0"]
 
 [ext_resource type="Texture2D" uid="uid://31xl8uc8oc42" path="res://Assets/Level/level_A_Steps.png" id="1_gbqdt"]
 [ext_resource type="Texture2D" uid="uid://1jb7jxm3bkxx" path="res://Assets/Level/level_A_Steps_normal.png" id="2_j22sm"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://d2nh3vmggqdgt" path="res://Assets/Level/level_A_Pastel_texture_normal.png" id="12_jne57"]
 [ext_resource type="PackedScene" uid="uid://5ch68tqs4ib" path="res://Player/player.tscn" id="13_raiot"]
 [ext_resource type="Texture2D" uid="uid://bgqawyr65rsvt" path="res://Assets/Level/Starfield.png" id="14_irhhm"]
+[ext_resource type="PackedScene" uid="uid://bge12rcdqjvb8" path="res://Enemy/EnemyGuy.tscn" id="15_w5bi4"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_svkc8"]
 resource_name = "Stone_Plancks"
@@ -951,3 +952,6 @@ light_energy = 1.457
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11.7378, -38.9549)
 omni_range = 20.1126
+
+[node name="CharacterBody3D" parent="." instance=ExtResource("15_w5bi4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.20711, -15.6211)

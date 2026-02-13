@@ -4,6 +4,10 @@ var current_state = "idle"
 var next_state = "idle"
 var previous_state
 
+@onready var player
+func _ready():
+	player = get_tree().get_first_node_in_group("player")
+	print(player)
 
 func _physics_process(delta):
 	if previous_state != current_state:
@@ -15,11 +19,20 @@ func _physics_process(delta):
 	match current_state:
 		"idle":
 			idle()
-		#"chase":
-			#chase()
+		"chase":
+			chase(delta)
 		"bite":
 			bite()
+@onready var nav = $NavigationAgent3D
+@onready var speed=3.0
 	
+func chase(delta):
+	velocity = (nav.get_next_path_position() - position).normaliz
+	
+	if player.position.distance_to(position) > 1:
+		nav.target_position = player.position
+		move_and_collide(velocity)
+
 func idle():
 	if previous_state != current_state:
 		$Enemy/AnimationPlayer.play("Rest")

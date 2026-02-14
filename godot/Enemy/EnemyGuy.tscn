@@ -1,8 +1,12 @@
-[gd_scene load_steps=18 format=3 uid="uid://bge12rcdqjvb8"]
+[gd_scene load_steps=20 format=3 uid="uid://bge12rcdqjvb8"]
 
 [ext_resource type="Script" path="res://Enemy/EnemyGuy.gd" id="1_imfqs"]
+[ext_resource type="Script" path="res://Enemy/EnemyHitDetection.gd" id="2_gkt1m"]
+[ext_resource type="Script" path="res://Enemy/EyeCrit1.gd" id="3_lu5db"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_03jhw"]
+radius = 1.18916
+height = 4.48852
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_foqdk"]
 resource_name = "Body"
@@ -571,12 +575,14 @@ radius = 1.43039
 radius = 0.242146
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_hkjx8"]
-size = Vector3(28.5986, 13.5059, 31.1904)
+size = Vector3(3.06641, 2.979, 4.72949)
 
 [node name="Enemy" type="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.53321, 0)
 script = ExtResource("1_imfqs")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.13189, 0)
 shape = SubResource("CapsuleShape3D_03jhw")
 
 [node name="Enemy" type="Node3D" parent="."]
@@ -683,6 +689,7 @@ autoplay = "Bite"
 
 [node name="EnemyHitDetection" type="Area3D" parent="Enemy" groups=["enemy"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00468481, 0, 0.0680172)
+script = ExtResource("2_gkt1m")
 
 [node name="HitCollision" type="CollisionShape3D" parent="Enemy/EnemyHitDetection"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.199528, 0.218079)
@@ -690,6 +697,7 @@ shape = SubResource("SphereShape3D_vlwkn")
 
 [node name="EyeCrit1" type="Area3D" parent="Enemy" groups=["critical"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00468481, 0, 0.0680172)
+script = ExtResource("3_lu5db")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Enemy/EyeCrit1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.628682, 1.35953, 0.282907)
@@ -698,6 +706,7 @@ shape = SubResource("SphereShape3D_2cm0f")
 [node name="Area3D" type="Area3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.106689, 1.09863)
 shape = SubResource("BoxShape3D_hkjx8")
 
 [node name="StateLabel" type="Label3D" parent="."]

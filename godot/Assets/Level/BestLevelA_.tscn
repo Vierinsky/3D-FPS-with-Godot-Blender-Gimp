@@ -846,7 +846,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0830544, 0)
 
 [node name="level_A" type="Node3D" parent="."]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
-visible = false
 
 [node name="Plane" type="MeshInstance3D" parent="level_A"]
 mesh = SubResource("ArrayMesh_lxqc5")
@@ -955,7 +954,6 @@ navigation_mesh = SubResource("NavigationMesh_7vm0p")
 
 [node name="Bunker" type="MeshInstance3D" parent="NavigationRegion3D"]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, -0.264656, 0)
-visible = false
 mesh = SubResource("ArrayMesh_0dvn8")
 skeleton = NodePath("")
 

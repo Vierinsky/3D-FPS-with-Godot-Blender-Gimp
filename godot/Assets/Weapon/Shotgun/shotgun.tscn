@@ -618,34 +618,50 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.38433, 1.72252, 0)
 [node name="RayCast3D" type="RayCast3D" parent="WeaponPivot/RayHolder"]
 transform = Transform3D(0.997346, -0.072803, 0, 0.072803, 0.997346, 0, 0, 0, 1, 0, 0, 0)
 target_position = Vector3(20, 0, 0)
+collide_with_areas = true
+collide_with_bodies = false
 
 [node name="RayCast3D2" type="RayCast3D" parent="WeaponPivot/RayHolder"]
 transform = Transform3D(0.998995, 0.0448225, 0, -0.0448225, 0.998995, 0, 0, 0, 1, 0, 0, 0)
 target_position = Vector3(20, 0, 0)
+collide_with_areas = true
+collide_with_bodies = false
 
 [node name="RayCast3D3" type="RayCast3D" parent="WeaponPivot/RayHolder"]
 transform = Transform3D(0.997563, 0.0447582, 0.0535211, -0.000873838, 0.775066, -0.631879, -0.0697642, 0.630293, 0.773217, 0, 0, 0)
 target_position = Vector3(20, 0, 0)
+collide_with_areas = true
+collide_with_bodies = false
 
 [node name="RayCast3D4" type="RayCast3D" parent="WeaponPivot/RayHolder"]
 transform = Transform3D(0.997563, 0.0447582, 0.0535211, 0.0487253, -0.995972, -0.0752711, 0.0499365, 0.0776955, -0.995726, 0, 0, 0)
 target_position = Vector3(20, 0, 0)
+collide_with_areas = true
+collide_with_bodies = false
 
 [node name="RayCast3D5" type="RayCast3D" parent="WeaponPivot/RayHolder"]
 transform = Transform3D(0.999558, 0.0177748, -0.0238108, -0.00606893, 0.906579, 0.421993, 0.0290872, -0.421662, 0.906286, 0, 0, 0)
 target_position = Vector3(20, 0, 0)
+collide_with_areas = true
+collide_with_bodies = false
 
 [node name="RayCast3D6" type="RayCast3D" parent="WeaponPivot/RayHolder"]
 transform = Transform3D(0.998981, -0.0449564, -0.00401379, 0.0449588, 0.998989, 0.00050799, 0.00398689, -0.000687927, 0.999992, 0, 0, 0)
 target_position = Vector3(20, 0, 0)
+collide_with_areas = true
+collide_with_bodies = false
 
 [node name="RayCast3D7" type="RayCast3D" parent="WeaponPivot/RayHolder"]
 transform = Transform3D(0.999844, 0.0118312, 0.0131295, -0.000873838, 0.775066, -0.631879, -0.0176521, 0.631769, 0.774955, 0, 0, 0)
 target_position = Vector3(20, 0, 0)
+collide_with_areas = true
+collide_with_bodies = false
 
 [node name="RayCast3D8" type="RayCast3D" parent="WeaponPivot/RayHolder"]
 transform = Transform3D(0.999109, 0.0158863, -0.0391108, 0.0372564, -0.767469, 0.640003, -0.0198491, -0.64089, -0.767376, 0, 0, 0)
 target_position = Vector3(20, 0, 0)
+collide_with_areas = true
+collide_with_bodies = false
 
 [node name="FireSound" type="AudioStreamPlayer" parent="WeaponPivot"]
 stream = ExtResource("1_4dxft")

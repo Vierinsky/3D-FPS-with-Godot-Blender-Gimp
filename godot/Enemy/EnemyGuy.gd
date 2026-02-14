@@ -23,6 +23,10 @@ func _physics_process(delta):
 			chase(delta)
 		"bite":
 			bite()
+
+func take_damage(num):
+	print("We took ", num, " damage.")
+
 @onready var nav = $NavigationAgent3D
 @onready var speed=3.0
 	

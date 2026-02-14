@@ -100,21 +100,10 @@ func fire():
 		if ray.is_colliding():
 			print(ray.get_collider())
 			if ray.get_collider().is_in_group("enemy"):
-				ray.get_collider().take_hit()
+				ray.get_collider().take_damage(10)
+				
+			if ray.get_collider().is_in_group("critical"):
+				ray.get_collider().take_damage(25)
 
-#func _on_animation_player_animation_finished(anim_name):
-	#print("anim_name = ", anim_name)
-	#if anim_name == "Fire":
-		#current_anim = "Pump"
-		#$AnimationPlayer.play("Pump")
-		#$PumpSound.play()
-		#
-	#if anim_name == "Pump":
-		#current_anim = ""
-		#can_fire = true
-		#
-	#if anim_name == "Reload":
-		#current_anim = ""
-		#can_fire = true
 
 

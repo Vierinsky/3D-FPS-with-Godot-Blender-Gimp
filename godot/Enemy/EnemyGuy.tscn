@@ -681,14 +681,14 @@ libraries = {
 }
 autoplay = "Bite"
 
-[node name="EnemyHitDetection" type="Area3D" parent="Enemy" groups=["Enemy"]]
+[node name="EnemyHitDetection" type="Area3D" parent="Enemy" groups=["enemy"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00468481, 0, 0.0680172)
 
 [node name="HitCollision" type="CollisionShape3D" parent="Enemy/EnemyHitDetection"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.199528, 0.218079)
 shape = SubResource("SphereShape3D_vlwkn")
 
-[node name="EyeCrit1" type="Area3D" parent="Enemy" groups=["Critical"]]
+[node name="EyeCrit1" type="Area3D" parent="Enemy" groups=["critical"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00468481, 0, 0.0680172)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Enemy/EyeCrit1"]

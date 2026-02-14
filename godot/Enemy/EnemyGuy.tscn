@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://bge12rcdqjvb8"]
+[gd_scene load_steps=19 format=3 uid="uid://bge12rcdqjvb8"]
 
 [ext_resource type="Script" path="res://Enemy/EnemyGuy.gd" id="1_imfqs"]
 [ext_resource type="Script" path="res://Enemy/EnemyHitDetection.gd" id="2_gkt1m"]
@@ -569,13 +569,10 @@ _data = {
 }
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_vlwkn"]
-radius = 1.43039
+radius = 1.26505
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_2cm0f"]
 radius = 0.242146
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_hkjx8"]
-size = Vector3(3.06641, 2.979, 4.72949)
 
 [node name="Enemy" type="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.53321, 0)
@@ -692,7 +689,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00468481, 0, 0.0680172)
 script = ExtResource("2_gkt1m")
 
 [node name="HitCollision" type="CollisionShape3D" parent="Enemy/EnemyHitDetection"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.199528, 0.218079)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.00709558, 0.218079)
 shape = SubResource("SphereShape3D_vlwkn")
 
 [node name="EyeCrit1" type="Area3D" parent="Enemy" groups=["critical"]]
@@ -703,18 +700,9 @@ script = ExtResource("3_lu5db")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.628682, 1.35953, 0.282907)
 shape = SubResource("SphereShape3D_2cm0f")
 
-[node name="Area3D" type="Area3D" parent="."]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.106689, 1.09863)
-shape = SubResource("BoxShape3D_hkjx8")
-
 [node name="StateLabel" type="Label3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.3277, 0)
 font_size = 100
 outline_size = 18
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
-
-[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
-[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]

@@ -70,32 +70,6 @@ func chase(delta: float) -> void:
 
 	move_and_slide()
 
-#func chase(delta):
-	## 1) Actualiza el objetivo primero (Vector3)
-	#nav.target_position = player.global_position
-	#
-	## 2) Siguiente punto del path (Vector3)
-	#var next_pos: Vector3 = nav.get_next_path_position()
-	## 3) Dirección hacia el siguiente punto (Vector3)
-	#var dir: Vector3 = next_pos - global_position
-	#
-	## (Opcional, pero recomendado en 3D) no persigas en Y
-	#dir.y=0.0
-	#
-	#if dir.length() > 0.001:
-		#dir = dir.normalized()
-		#
-	## 4) Aplica velocidad (NO uses delta aquí)
-	#if player.global_position.distance_to(global_position) > 1.0:
-		#velocity.x = dir.x * speed
-		#velocity.z = dir.z * speed
-	#else:
-		#velocity.x = 0.0
-		#velocity.z = 0.0
-		#
-	## 5) Mueve el CharacterBody3D
-	#move_and_slide()
-
 func idle():
 	next_state="chase"
 	if previous_state != current_state:
@@ -106,11 +80,6 @@ func bite():
 	if previous_state != current_state:
 		$Enemy/AnimationPlayer.play("Bite")
 		
-func _on_area_3d_body_entered(body):
-	if body.is_in_group("player"):
-		next_state = "bite"
-
-
 func _on_area_3d_body_exited(body):
 	if body.is_in_group("player"):
 		next_state = "idle"

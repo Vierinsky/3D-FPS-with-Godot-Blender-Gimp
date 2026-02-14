@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bge12rcdqjvb8"]
+[gd_scene load_steps=18 format=3 uid="uid://bge12rcdqjvb8"]
 
 [ext_resource type="Script" path="res://Enemy/EnemyGuy.gd" id="1_imfqs"]
 
@@ -564,6 +564,12 @@ _data = {
 "TakeHit": SubResource("Animation_2u65v")
 }
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_vlwkn"]
+radius = 1.43039
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_2cm0f"]
+radius = 0.242146
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_hkjx8"]
 size = Vector3(28.5986, 13.5059, 31.1904)
 
@@ -674,6 +680,20 @@ libraries = {
 "": SubResource("AnimationLibrary_gdrko")
 }
 autoplay = "Bite"
+
+[node name="EnemyHitDetection" type="Area3D" parent="Enemy" groups=["Enemy"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00468481, 0, 0.0680172)
+
+[node name="HitCollision" type="CollisionShape3D" parent="Enemy/EnemyHitDetection"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.199528, 0.218079)
+shape = SubResource("SphereShape3D_vlwkn")
+
+[node name="EyeCrit1" type="Area3D" parent="Enemy" groups=["Critical"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00468481, 0, 0.0680172)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Enemy/EyeCrit1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.628682, 1.35953, 0.282907)
+shape = SubResource("SphereShape3D_2cm0f")
 
 [node name="Area3D" type="Area3D" parent="."]
 

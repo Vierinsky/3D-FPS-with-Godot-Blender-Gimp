@@ -27,13 +27,14 @@ func _physics_process(delta):
 @onready var speed=3.0
 	
 func chase(delta):
-	velocity = (nav.get_next_path_position() - position).normaliz
+	velocity = (nav.get_next_path_position() - position).normalized() * speed * delta
 	
-	if player.position.distance_to(position) > 1:
+	if player.position.distance_to(self.position) > 1:
 		nav.target_position = player.position
 		move_and_collide(velocity)
 
 func idle():
+	next_state="chase"
 	if previous_state != current_state:
 		$Enemy/AnimationPlayer.play("Rest")
 	
